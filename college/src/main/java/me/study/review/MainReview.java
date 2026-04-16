@@ -1,6 +1,6 @@
 package me.study.review;
 
-public class Main {
+public class MainReview {
     public static void main(String[] args) {
         Pessoa p = new Pessoa(19, 1.70, true);
         System.out.println("Pessoa criada =)");
