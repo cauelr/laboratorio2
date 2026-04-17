@@ -1,4 +1,4 @@
-package me.study.activity;
+package me.study.activity.arrays;
 
 import java.util.Scanner;
 

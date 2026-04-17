@@ -1,9 +1,9 @@
-package me.study.activity;
+package me.study.activity.arrays;
 
 import java.util.Random;
 import java.util.Scanner;
 
-public class Exercicios {
+public class ExerciciosArrayBidimensional {
     int array[][] = new int[0][0];
 
     public void exercicio1a() {
