@@ -1,28 +1,13 @@
 package me.study.activity.classesabstrataseinterfaces;
 
 public class ContaPoupanca extends ContaBancaria {
-    private double taxaDeRendimento;
+    private double taxaDeRendimento = 14.2;
 
-    public ContaPoupanca(double taxaDeRendimento, String senha, int numero, double saldo) {
-        super(senha, numero, saldo);
-        this.taxaDeRendimento = taxaDeRendimento;
+    public ContaPoupanca(int numero, String senha, double saldo) {
+        super(numero, senha, saldo);
     }
 
-    @Override
-    public double sacar(double valor) {
-        // TODO Auto-generated method stub
-        return getSaldo() - valor;
-    }
-
-    @Override
-    public double depositar(double valor) {
-        // TODO Auto-generated method stub
-        return getSaldo() + valor;
-    }
-
-    @Override
-    public void tirarExtrato() {
-        // TODO Auto-generated method stub
+    public ContaPoupanca() {
 
     }
 
@@ -32,5 +17,34 @@ public class ContaPoupanca extends ContaBancaria {
 
     public void setTaxaDeRendimento(double taxaDeRendimento) {
         this.taxaDeRendimento = taxaDeRendimento;
+    }
+
+    @Override
+    public double sacar(double valor) {
+        double novoSaldo = getSaldo() - valor;
+        setSaldo(novoSaldo);
+        return novoSaldo;
+    }
+
+    @Override
+    public double depositar(double valor) {
+        double novoSaldo = getSaldo() + valor;
+        setSaldo(novoSaldo);
+        return novoSaldo;
+    }
+
+    @Override
+    public void tirarExtrato() {
+        // TODO Auto-generated method stub
+    }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return "Tipo de Conta: CONTA CORRENTE\n" +
+                "Número da Conta: " + getNumero() +
+                "\nSenha da Conta: " + getSenha() +
+                "\nSaldo da Conta: " + getSaldo() +
+                "\nTaxa de Rendimentos: " + this.taxaDeRendimento + "%";
     }
 }

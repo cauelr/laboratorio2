@@ -7,14 +7,18 @@ abstract class ContaBancaria {
     private int numero;
     private double saldo;
 
-    public ContaBancaria(String senha, int numero, double saldo) {
-        this.senha = senha;
+    public ContaBancaria(int numero, String senha, double saldo) {
         this.numero = numero;
+        this.senha = senha;
         this.saldo = saldo;
     }
 
     public ContaBancaria(String senha) {
         this.senha = senha;
+    }
+
+    public ContaBancaria() {
+
     }
 
     public abstract double sacar(double valor);

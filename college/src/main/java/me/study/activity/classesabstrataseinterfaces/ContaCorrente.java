@@ -3,8 +3,19 @@ package me.study.activity.classesabstrataseinterfaces;
 public class ContaCorrente extends ContaBancaria {
     private int qntdTransacoes;
 
-    public ContaCorrente(int qntdTransacoes, String senha, int numero, int saldo) {
-        super(senha, numero, saldo);
+    public ContaCorrente(int numero, String senha, double saldo) {
+        super(numero, senha, saldo);
+    }
+
+    public ContaCorrente() {
+
+    }
+
+    public int getQntdTransacoes() {
+        return qntdTransacoes;
+    }
+
+    public void setQntdTransacoes(int qntdTransacoes) {
         this.qntdTransacoes = qntdTransacoes;
     }
 
@@ -26,15 +37,17 @@ public class ContaCorrente extends ContaBancaria {
 
     @Override
     public void tirarExtrato() {
+        String[] extrato = new String[this.qntdTransacoes];
+
+    }
+
+    @Override
+    public String toString() {
         // TODO Auto-generated method stub
-
+        return "Tipo de Conta: CONTA CORRENTE\n" +
+                "Número da Conta: " + getNumero() +
+                "\nSenha da Conta: " + getSenha() +
+                "\nSaldo da Conta: " + getSaldo();
     }
 
-    public int getQntdTransacoes() {
-        return qntdTransacoes;
-    }
-
-    public void setQntdTransacoes(int qntdTransacoes) {
-        this.qntdTransacoes = qntdTransacoes;
-    }
 }
